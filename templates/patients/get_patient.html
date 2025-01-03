@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Patient</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Retrieve Patient Details</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        {% if patient %}
+        <h2>Patient Details</h2>
+        <p>Name: {{ patient.name }}</p>
+        <p>Age: {{ patient.age }}</p>
+        <p>Gender: {{ patient.gender }}</p>
+        <p>Address: {{ patient.address }}</p>
+        <p>Phone: {{ patient.phone_number }}</p>
+        <p>Admission Date: {{ patient.admission_date }}</p>
+        {% elif patient is not None %}
+        <p>Patient not found!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

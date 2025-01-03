@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Statistics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Statistics</h1>
+        <p>Patients attended today: {{ statistics.daily }}</p>
+        <p>Patients attended this week: {{ statistics.weekly }}</p>
+        <p>Patients attended this month: {{ statistics.monthly }}</p>
+        <p>Patients attended this year: {{ statistics.yearly }}</p>
+    </div>
+</body>
+</html>
